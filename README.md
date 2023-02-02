@@ -1,0 +1,1 @@
+# Prediction_of_fatigue_strength
