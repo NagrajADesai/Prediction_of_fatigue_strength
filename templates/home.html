@@ -3,52 +3,154 @@
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
+  <title>Prediction of Fatigue Strength by using Machine Learning</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+<style>
+	*{
+		margin:0%;
+		padding: 0px;
+	}
+	.center{
+		align:middle ;
+	}
+	.headdiv{	
+		background-color:rgb(14, 67, 113);
+		color: rgb(233, 237, 240);
+		text-align: center;
+	}
+	.login{
+		width:50%;
+    height:950px;
+    background-color:rgb(234, 237, 242);
+    display:inline-block;
+	}
+	.detail{
+		width:50%;
+    height:950px;
+    background-color:rgb(246, 248, 250);
+    position: absolute;
+    right:0px;
+   display:inline-block; 
+	}
+	.center{
+		text-align: center;
+	}
+</style>  
 </head>
 
 <body>
- <div class="login">
-	<h1>Predict Fatigue life cycle</h1>
-
+	<div class="headdiv">
+		<h1>Prediction of Fatigue Strength by using Machine Learning</h1>
+	</div>
+ <div class="login">		
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form  action="{{ url_for('predict')}}"method="post" >
+         <div class="center">
+			<br>
     	<input type="text" name="NT" placeholder="NT" required="required" />
-        <input type="text" name="THT" placeholder="THT" required="required" />
+	    <br><br>
+		<input type="text" name="THT" placeholder="THT" required="required" />
+		<br><br>
 		<input type="text" name="THQCr" placeholder="THQCr" required="required" />
+		<br><br>
 		<input type="text" name="CT" placeholder="CT" required="required" />
+		<br><br>
 		<input type="text" name="Ct" placeholder="Ct" required="required" />
+		<br><br>
 		<input type="text" name="Dt" placeholder="Dt" required="required" />
+		<br><br>
 		<input type="text" name="QmT" placeholder="QmT" required="required" />
+	    <br><br>
 		<input type="text" name="TT" placeholder="TT" required="required" />
+	    <br><br>
 		<input type="text" name="Tt" placeholder="Tt" required="required" />
+		<br><br>
 		<input type="text" name="C" placeholder="C" required="required" />
+	    <br><br>
 		<input type="text" name="Si" placeholder="Si" required="required" />
+		<br><br>
 		<input type="text" name="Mn" placeholder="Mn" required="required" />
+		<br><br>
 		<input type="text" name="P" placeholder="P" required="required" />
+	    <br><br>
 		<input type="text" name="S" placeholder="S" required="required" />
+	    <br><br>
 		<input type="text" name="Ni" placeholder="Ni" required="required" />
+	    <br><br>
 		<input type="text" name="Cr" placeholder="Cr" required="required" />
+		<br><br>
 		<input type="text" name="Cu" placeholder="Cu" required="required" />
+	    <br><br>
 		<input type="text" name="Mo" placeholder="Mo" required="required" />
+	    <br><br>
 		<input type="text" name="RedRatio" placeholder="RedRatio" required="required" />
+	    <br><br>
 		<input type="text" name="dA" placeholder="dA" required="required" />
+	    <br><br>
 		<input type="text" name="dB" placeholder="dB" required="required" />
+	    <br><br>
 		<input type="text" name="dC" placeholder="dC" required="required" />
-
+	    <br><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	
     </form>
-
    <br>
    <br>
-   {{ prediction_text }}
-
- </div>
-
+	{{ prediction_text }}
+   </div>
+   
+ </div><div class="detail">
+<p>
+<br>
+<span>NT : Normalizing Temperature</span>
+<br>
+<span>THT : Through Hardening Temperature</span>
+<br>
+<span>THQCr : Cooling Rate for Through Hardening</span>
+<br>
+<span>CT : Carburization Temperature</span>
+<br>
+<span>Ct : Carburization Time</span>
+<br>
+<span>DT : Diffusion Temperature</span>
+<br>
+<span>QmT : Quenching Media Temperature</span>
+<br>
+<span>TT : Tempering Temperature</span>
+<br>
+<span>Tt : Tempering Time</span>
+<br>
+<span>C : % of Carbon</span>
+<br>
+<span>Si :% of Silicon</span>
+<br>
+<span>Mn : % of Manganese</span>
+<br>
+<span>P : % of Phosphorus</span>
+<br>
+<span>S : % of Silicon</span>
+<br>
+<span>Ni : % of Nickel</span>
+<br>
+<span>Cr : % of Chromium</span>
+<br>
+<span>Cu : % of Copper</span>
+<br>
+<span>Mo : % of Molybdenum</span>
+<br>
+<span>RedRatio : Reduction Ration</span>
+<br>
+<span>dA : Area Proportion of Inclusions Deformed by Plastic Work</span>
+<br>
+<span>dB : Area Proportion of Inclusions Occurring in Discontinuous Array</span>
+<br>
+<span>dC : Area Proportion of Isolated Inclusions</span>
+</p>
+</div>
 
 </body>
 </html>
+
