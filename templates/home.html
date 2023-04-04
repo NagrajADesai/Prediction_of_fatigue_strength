@@ -38,6 +38,14 @@
 	.center{
 		text-align: center;
 	}
+	label{
+		padding-left: 175px;
+		display: inline-block;
+		width:70px;
+	}
+	.leftpadding{
+		padding-left: 75px;
+	}
 </style>  
 </head>
 
@@ -47,106 +55,115 @@
 	</div>
  <div class="login">		
      <!-- Main Input For Receiving Query to our ML -->
-    <form  action="{{ url_for('predict')}}"method="post" >
-         <div class="center">
+	 <form  action="{{ url_for('predict')}}"method="post" >
+		
+		<div class="">
+		   <br>
+		   <h2 class="center">Parameters</h2>
+		   <p class="rightpadding">
 			<br>
-    	<input type="text" name="NT" placeholder="NT" required="required" />
-	    <br><br>
-		<input type="text" name="THT" placeholder="THT" required="required" />
-		<br><br>
-		<input type="text" name="THQCr" placeholder="THQCr" required="required" />
-		<br><br>
-		<input type="text" name="CT" placeholder="CT" required="required" />
-		<br><br>
-		<input type="text" name="Ct" placeholder="Ct" required="required" />
-		<br><br>
-		<input type="text" name="Dt" placeholder="Dt" required="required" />
-		<br><br>
-		<input type="text" name="QmT" placeholder="QmT" required="required" />
-	    <br><br>
-		<input type="text" name="TT" placeholder="TT" required="required" />
-	    <br><br>
-		<input type="text" name="Tt" placeholder="Tt" required="required" />
-		<br><br>
-		<input type="text" name="C" placeholder="C" required="required" />
-	    <br><br>
-		<input type="text" name="Si" placeholder="Si" required="required" />
-		<br><br>
-		<input type="text" name="Mn" placeholder="Mn" required="required" />
-		<br><br>
-		<input type="text" name="P" placeholder="P" required="required" />
-	    <br><br>
-		<input type="text" name="S" placeholder="S" required="required" />
-	    <br><br>
-		<input type="text" name="Ni" placeholder="Ni" required="required" />
-	    <br><br>
-		<input type="text" name="Cr" placeholder="Cr" required="required" />
-		<br><br>
-		<input type="text" name="Cu" placeholder="Cu" required="required" />
-	    <br><br>
-		<input type="text" name="Mo" placeholder="Mo" required="required" />
-	    <br><br>
-		<input type="text" name="RedRatio" placeholder="RedRatio" required="required" />
-	    <br><br>
-		<input type="text" name="dA" placeholder="dA" required="required" />
-	    <br><br>
-		<input type="text" name="dB" placeholder="dB" required="required" />
-	    <br><br>
-		<input type="text" name="dC" placeholder="dC" required="required" />
-	    <br><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-	
-    </form>
-   <br>
-   <br>
-	{{ prediction_text }}
+		   <label>NT:</label>
+	   <input type="text" name="NT" placeholder="NT" required="required" />
+	   <br><br>
+	   <label>THT:</label>
+	   <input type="text" name="THT" placeholder="THT" required="required" />
+	   <br><br><label>THQCr:</label>
+	   <input type="text" name="THQCr" placeholder="THQCr" required="required" />
+	   <br><br><label>CT:</label>
+	   <input type="text" name="CT" placeholder="CT" required="required" />
+	   <br><br><label>Ct:</label>
+	   <input type="text" name="Ct" placeholder="Ct" required="required" />
+	   <br><br><label>Dt:</label>
+	   <input type="text" name="Dt" placeholder="Dt" required="required" />
+	   <br><br><label>QmT:</label>
+	   <input type="text" name="QmT" placeholder="QmT" required="required" />
+	   <br><br><label>TT:</label>
+	   <input type="text" name="TT" placeholder="TT" required="required" />
+	   <br><br><label>Tt:</label>
+	   <input type="text" name="Tt" placeholder="Tt" required="required" />
+	   <br><br><label>C:</label>
+	   <input type="text" name="C" placeholder="C" required="required" />
+	   <br><br><label>Si:</label>
+	   <input type="text" name="Si" placeholder="Si" required="required" />
+	   <br><br><label>Mn:</label>
+	   <input type="text" name="Mn" placeholder="Mn" required="required" />
+	   <br><br><label>P:</label>
+	   <input type="text" name="P" placeholder="P" required="required" />
+	   <br><br><label>S:</label>
+	   <input type="text" name="S" placeholder="S" required="required" />
+	   <br><br><label>Ni:</label>
+	   <input type="text" name="Ni" placeholder="Ni" required="required" />
+	   <br><br><label>Cr:</label>
+	   <input type="text" name="Cr" placeholder="Cr" required="required" />
+	   <br><br><label>Cu:</label>
+	   <input type="text" name="Cu" placeholder="Cu" required="required" />
+	   <br><br><label>Mo:</label>
+	   <input type="text" name="Mo" placeholder="Mo" required="required" />
+	   <br><br><label>RedRatio:</label>
+	   <input type="text" name="RedRatio" placeholder="RedRatio" required="required" />
+	   <br><br><label>dA:</label>
+	   <input type="text" name="dA" placeholder="dA" required="required" />
+	   <br><br><label>dB:</label>
+	   <input type="text" name="dB" placeholder="dB" required="required" />
+	   <br><br><label>dC:</label>
+	   <input type="text" name="dC" placeholder="dC" required="required" />
+	   <br><br>
+	   <label></label>
+	   <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	   
+   </form>
+  <br>
+  <br>
+  <div class="center">
+	  {{ prediction_text }}
    </div>
-   
+  </div>
  </div><div class="detail">
-<p>
-<br>
+	 <br>
+	 <h2 class="center">Details</h2>
+	 <p class="leftpadding">
 <span>NT : Normalizing Temperature</span>
-<br>
+<br><br>
 <span>THT : Through Hardening Temperature</span>
-<br>
+<br><br>
 <span>THQCr : Cooling Rate for Through Hardening</span>
-<br>
+<br><br>
 <span>CT : Carburization Temperature</span>
-<br>
+<br><br>
 <span>Ct : Carburization Time</span>
-<br>
+<br><br>
 <span>DT : Diffusion Temperature</span>
-<br>
+<br><br>
 <span>QmT : Quenching Media Temperature</span>
-<br>
+<br><br>
 <span>TT : Tempering Temperature</span>
-<br>
+<br><br>
 <span>Tt : Tempering Time</span>
-<br>
+<br><br>
 <span>C : % of Carbon</span>
-<br>
+<br><br>
 <span>Si :% of Silicon</span>
-<br>
+<br><br>
 <span>Mn : % of Manganese</span>
-<br>
+<br><br>
 <span>P : % of Phosphorus</span>
-<br>
+<br><br>
 <span>S : % of Silicon</span>
-<br>
+<br><br>
 <span>Ni : % of Nickel</span>
-<br>
+<br><br>
 <span>Cr : % of Chromium</span>
-<br>
+<br><br>
 <span>Cu : % of Copper</span>
-<br>
+<br><br>
 <span>Mo : % of Molybdenum</span>
-<br>
+<br><br>
 <span>RedRatio : Reduction Ration</span>
-<br>
+<br><br>
 <span>dA : Area Proportion of Inclusions Deformed by Plastic Work</span>
-<br>
+<br><br>
 <span>dB : Area Proportion of Inclusions Occurring in Discontinuous Array</span>
-<br>
+<br><br>
 <span>dC : Area Proportion of Isolated Inclusions</span>
 </p>
 </div>

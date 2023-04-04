@@ -26,8 +26,10 @@ def predict():
     data = [float(x) for x in request.form.values()]
     data =np.array(data).reshape(1,-1)
     print(data)
+
     output = regmodel.predict(data)[0]
-    return render_template("home.html",prediction_text = "The life of given steel material is {} * 10^7 number of cycles".format(output))
+
+    return render_template("home.html",prediction_text= "The life of given steel material is {} * 10^7 number of cycles".format(output))
 
 
 if __name__ == "__main__":
