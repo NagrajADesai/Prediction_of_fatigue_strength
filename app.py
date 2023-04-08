@@ -6,9 +6,9 @@ import pandas
 
 app = Flask(__name__)
 # load the model
-file = open('regmodel.pkl', 'rb')
-regmodel = pickle.load(file)
+regmodel = pickle.load(open('regmodel.pkl', 'rb'))
 
+rng = np.random.RandomState(seed=42)
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -30,7 +30,7 @@ def predict():
 
     output = regmodel.predict(data)[0]
 
-    return render_template("home.html",prediction_text= "The life of given steel material is {} * 10^7 number of cycles".format(output))
+    return render_template("home.html",prediction_text= "The life of given steel material is {}. The given value is in the format of 10^7 number of cycles".format(output))
 
 
 if __name__ == "__main__":
